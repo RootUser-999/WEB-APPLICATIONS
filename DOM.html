@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Div Colors</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px;
+            
+        }
+        nav{
+            display: grid;
+            border: solid 2px ;
+            
+            grid-template-areas: "phela dusra tesra";
+            grid-template-rows: "1 2 3 4";
+            gap: 10px;
+
+        }
+        .div2{
+            grid-area: 2;
+
+        }
+        .div3{
+            grid-area: 3;
+
+        }
+        div {
+            border: 2px solid;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            grid-area: 4;
+           
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button >Toggle Colors</button>
+        <div class="div1" ></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        
+    </nav>
+    <script>
+        var btn = document.querySelector("button");
+        var divs = document.querySelectorAll("div");
+        var flag = 0; 
+        btn.addEventListener("click",function(){
+            
+            if(flag==0)
+            {
+                divs.forEach(function(e){
+                 var rand=Math.floor(Math.random()*(3-0)+0);
+                 var colors=["yellow","green","red"];
+                    
+                e.style.backgroundColor=colors[rand];
+                
+            })
+            flag=1;
+         }
+         else{
+            divs.forEach(function(e){
+                e.style.backgroundColor="black";
+                flag=0;
+            })
+         }
+        })
+        
+        
+    </script>
+</body>
+</html>
