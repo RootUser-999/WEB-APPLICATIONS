@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    
+    <script>
+        // let arr=[1,2,3,4]
+        // let [a,b]=arr;
+        // console.log(a,b)
+
+        // let array=[1,2,3,4,5,6,7,3,8]
+        // let [a,,,...arr]=array
+        // console.log(a,arr);
+
+        // let array=[10,23,12,32,54,2]
+        // let  [a,b,c]=array;
+
+        // function abca(s,b,r){
+            
+        //     return s+b+r; 
+        // }
+        // console.log(abca(a,b,c))
+
+        //spread operator
+        // let array=[10,23,12,23,12];
+
+        // function sum(v1,v2,v3){
+        //     return v1+v2+v3;
+        // }
+        // console.log(sum(...array))
+
+        // let obj={name:"shahzab",age :34}
+        // console.log({...obj,name:"ali"})
+        let object={
+            name:"ali",
+            age:12,
+            address:"islamabad"
+        }
+        console.log({...object,name:"shahzab"})
+
+    </script>
+</body>
+</html>
