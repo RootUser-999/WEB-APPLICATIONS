@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread OperatoR</title>
+</head>
+<body>
+    
+    <script>
+        let arr=[1,2,3,4,5];
+        const newArray =[...arr]
+        console.log(newArray)
+
+        const name="random user"
+        let chars=[...name]
+        console.log(chars)
+
+        let arr1=[1,2,3,4]
+        let arr2=[5,6,7,8]
+        const mergedArray=[...arr1,...arr2]
+        console.log(mergedArray)
+
+        let number=[1,2,3,4,5]
+        let [a,,...num]=number
+        function print(a,...b)
+        {
+            return a,b
+        }
+        console.log(print(a,...num))
+    </script>
+</body>
+</html>
