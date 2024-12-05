@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Checker</h1>
+        <label for="marks">Enter your marks (0-100):</label>
+        <input type="number" id="marks" min="0" max="100" required>
+        <button id="checkGrade">Check Grade</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('checkGrade').addEventListener('click', function() {
+            const marks = parseInt(document.getElementById('marks').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                resultDiv.innerHTML = "Invalid marks! Please enter a number between 0 and 100.";
+                resultDiv.style.color = "red";
+            } else {
+                let grade;
+                let color;
+
+                if (marks < 50) {
+                    grade = "F";
+                    color = "red";
+                } else if (marks >= 50 && marks < 60) {
+                    grade = "D";
+                    color = "yellow";
+                } else if (marks >= 60 && marks < 70) {
+                    grade = "C";
+                    color = "green";
+                } else if (marks >= 70 && marks < 80) {
+                    grade = "B";
+                    color = "pink";
+                } else if (marks >= 80 && marks <= 100) {
+                    grade = "A";
+                    color = "blue";
+                }
+
+                resultDiv.innerHTML = `Your grade is: <span style="color: ${color};">${grade}</span>`;
+            }
+        });
+    </script>
+</body>
+</html>
