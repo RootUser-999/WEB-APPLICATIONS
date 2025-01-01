@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Table</title>
+</head>
+<body>
+
+    <table border="1" align="center" width="50%" cellpadding="3px">
+        <caption>Caption-Nested Table</caption>
+        <tr>
+            <th>Column 1</th>
+            <th colspan="2"> Column 2</th>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Colspan Column</td>
+        </tr>
+        <tr>
+            <th rowspan="5">Rowspan Cell</th>
+            <th colspan="2">Cell 2</th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table border="1" cellspacing="10px"  cellpadding="20px" style="background-color: yellow;">
+                    <tr align="center" >
+                        <th>Inner Column Heading 1</th>
+                        <th>Inner Column Heading 2</th>
+                    </tr>
+                    <tr>
+                        <td bgcolor="grey" rowspan="2" align="center" >Inner Data Cell 1</td>
+                        <td bgcolor="greenyellow" >
+                            <table border="1" cellpadding="15px" cellspacing="10px" style="background-color: pink;" >
+                                <tr align="center">
+                                    <th>Inner Most Column Heading 1</th>
+                                    <th>Inner Most Column Heading 2</th>
+                                
+                                </tr>
+                                <tr align="center">
+                                    <td bgcolor="violet">Innermost Data Cell 1</td>
+                                    <td style="background-color: rgba(241, 94, 26, 0.89);">Innermost Data Cell 2</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
